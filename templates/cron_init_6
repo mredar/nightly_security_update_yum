@@ -1,0 +1,2 @@
+Cmnd_Alias INIT6 = /sbin/init 6
+Defaults!INIT6 !requiretty

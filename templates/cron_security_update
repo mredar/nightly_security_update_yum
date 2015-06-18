@@ -1,0 +1,2 @@
+Cmnd_Alias SECURITYUP = /usr/bin/yum update --security -y
+Defaults!SECURITYUP !requiretty

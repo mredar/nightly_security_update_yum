@@ -1,0 +1,31 @@
+---
+# tasks file for nightly_security_updates_aws
+- name: make ~/bin if not exist
+  file: 
+    state: directory
+    path: ~/bin/
+- name: put shell script in place
+  copy: 
+    src: amazon_linux_updates.sh
+    dest: ~/bin/amazon_linux_updates.sh
+    mode: 0755
+- name: create nightly cron job
+  cron:
+    name: Update security packages
+    minute: 11
+    hour: 2
+    job: ~/bin/amazon_linux_updates.sh
+- name: allow no tty for running yum --security update 
+  sudo: yes
+  template:
+    src: cron_security_update
+    dest: /etc/sudoers.d/cron_security_update
+    validate: 'visudo -cf %s'
+    mode: 0440
+- name: allow init 6 with no tty
+  sudo: yes
+  template:
+    src: cron_init_6
+    dest: /etc/sudoers.d/cron_init_6
+    validate: 'visudo -cf %s'
+    mode: 0440
