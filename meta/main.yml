@@ -111,6 +111,7 @@ galaxy_info:
   # the platforms above, uncomment those that apply to your role.
   #
 categories:
+  - system
   #- cloud
   #- cloud:ec2
   #- cloud:gce
@@ -123,7 +124,7 @@ categories:
   #- monitoring
   #- networking
   #- packaging
-  - system
+  #- system
   #- web
 dependencies: []
   # List your role dependencies here, one per line. Only
