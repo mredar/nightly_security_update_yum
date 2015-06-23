@@ -111,7 +111,7 @@ galaxy_info:
   # the platforms above, uncomment those that apply to your role.
   #
 categories:
-  - system
+- system
   #- cloud
   #- cloud:ec2
   #- cloud:gce
