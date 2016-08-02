@@ -13,7 +13,7 @@
   cron:
     name: Update security packages
     minute: 11
-    hour: 2
+    hour: 8  # Time is always UTC in AWS
     job: ~/bin/amazon_linux_updates.sh
 - name: allow no tty for running yum --security update 
   sudo: yes
