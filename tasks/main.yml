@@ -16,14 +16,14 @@
     hour: 8  # Time is always UTC in AWS
     job: ~/bin/amazon_linux_updates.sh
 - name: allow no tty for running yum --security update 
-  sudo: yes
+  become: true
   template:
     src: cron_security_update
     dest: /etc/sudoers.d/cron_security_update
     validate: 'visudo -cf %s'
     mode: 0440
 - name: allow init 6 with no tty
-  sudo: yes
+  become: true
   template:
     src: cron_init_6
     dest: /etc/sudoers.d/cron_init_6
