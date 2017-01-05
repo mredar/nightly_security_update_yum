@@ -5,7 +5,7 @@ galaxy_info:
   company: CDL 
   license: BSD
   min_ansible_version: 1.2
-  categories:
+  galaxy_tags:
     - system
   #
   # Below are all platforms currently available. Just uncomment
